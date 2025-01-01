@@ -1,0 +1,138 @@
+@font-face {
+    font-family: "Inconsolata";
+    src: url("./assets/fonts/Inconsolata-VariableFont_wdth\,wght.ttf") format("truetype");
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: white;
+}
+
+body {
+    padding: 16px;
+    font-family: "Inconsolata", sans-serif;
+    background-image: url("./assets/images/background-desktop.png");
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    position: relative;
+}
+
+div.overlay-top {
+    content: url(assets/images/pattern-squiggly-line-top.svg);
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+div.overlay-bottom {
+    content: url(assets/images/pattern-squiggly-line-bottom.svg);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+section.header {
+    text-align: center;
+}
+
+h1.main-title {
+    line-height: 30px;
+    font-size: 24px;
+}
+
+h1.main-title::before {
+    content: url(assets/images/logo-mark.svg);
+    margin: 10px;
+}
+
+h2.event-subtitle {
+    font-size: 40px;
+    margin: 40px 0 10px 0;
+}
+
+p.event-description {
+    font-size: 20px;
+    color: hsl(252, 6%, 83%);
+}
+
+form {
+    display: block;
+    margin: 20px auto;
+    max-width: 30%;
+    display: flex;
+    flex-direction: column;
+}
+
+form label {
+    margin: 15px 0 10px;
+    text-transform: capitalize;
+}
+
+form input[type="file"] {
+    display: none;
+}
+
+form div.drag-drop-area {
+    border-radius: 10px;
+    border: 1px dashed white;
+    cursor: pointer;
+    margin-bottom: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+form div.drag-drop-area div.file-upload {
+    content: url(assets/images/icon-upload.svg);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 4px;
+    border-radius: 8px;
+    margin-bottom: 8px;
+}
+
+form p.info {
+    font-size: 12px;
+    align-items: center;
+}
+
+form p.info::before {
+    content: url(assets/images/icon-info.svg);
+    margin-right: 4px;
+    vertical-align: middle;
+}
+
+form input[type="text"] {
+    border: 1px solid rgba(255, 255, 255, 0.75);
+    border-radius: 10px;
+    min-height: 44px;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 10px;
+    color: white;
+}
+
+form input[type="text"]::placeholder {
+    color: white;
+
+}
+
+form button {
+    font-family: inherit;
+    font-size: 16px;
+    color: hsl(248, 70%, 10%);
+    font-weight: 800;
+    text-transform: capitalize;
+    background-color: hsl(7, 71%, 60%);
+    border-radius: 10px;
+    padding: 10px;
+    min-height: 44px;
+    margin-top: 20px;
+    outline: none;
+}

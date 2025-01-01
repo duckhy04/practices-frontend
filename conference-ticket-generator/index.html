@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <title>Frontend Mentor | Conference ticket generator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="overlay-top"></div>
+  <div class="overlay-bottom"></div>
+  <section class="header">
+    <h1 class="main-title">Coding Conf</h1>
+    <h2 class="event-subtitle">Your Journey to Coding Conf <br> 2025 Starts Here!</h2>
+    <p class="event-description">Secure your spot at next year's biggest coding conference.</p>
+  </section>
+
+  <section class="main">
+    <form action="">
+      <label for="uploadAvatar">Upload Avatar</label>
+      <div class="drag-drop-area" id="drag-drop-area">
+        <input type="file" name="uploadAvatar" id="uploadAvatar">
+        <div class="file-upload"></div>
+        <p>Drag and drop or click to upload</p>
+      </div>
+      <p class="info">Upload your photo (JPG or PNG, maxsize: 500KB).</p>
+      <label for="fullName">Full name</label>
+      <input type="text" name="fullName" id="fullName">
+      <label for="emailAddress">Email Address</label>
+      <input type="text" name="emailAddress" id="emailAddress" placeholder="example@email.com">
+      <label for="githubUsername">Github username</label>
+      <input type="text" name="githubUsername" id="githubUsername" placeholder="@yourusername">
+      <button type="submit">Generate my ticket</button>
+    </form>
+  </section>
+</body>
+
+</html>
+<script src="script.js"></script>
