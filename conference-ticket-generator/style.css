@@ -1,6 +1,6 @@
 @font-face {
     font-family: "Inconsolata";
-    src: url("./assets/fonts/Inconsolata-VariableFont_wdth\,wght.ttf") format("truetype");
+    src: url("./assets/fonts/Inconsolata-VariableFont_wdth,wght.ttf") format("truetype");
 }
 
 * {
@@ -13,126 +13,196 @@
 body {
     padding: 16px;
     font-family: "Inconsolata", sans-serif;
-    background-image: url("./assets/images/background-desktop.png");
-    background-size: cover;
+    background: url("./assets/images/background-desktop.png") no-repeat center center/cover;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
     position: relative;
 }
 
-div.overlay-top {
-    content: url(assets/images/pattern-squiggly-line-top.svg);
+.overlay {
     position: absolute;
+    pointer-events: none;
+}
+
+.overlay-top {
     top: 0;
     right: 0;
+    content: url(assets/images/pattern-squiggly-line-top.svg);
 }
 
-div.overlay-bottom {
-    content: url(assets/images/pattern-squiggly-line-bottom.svg);
-    position: absolute;
+.overlay-bottom {
     bottom: 0;
     left: 0;
+    content: url(assets/images/pattern-squiggly-line-bottom.svg);
 }
 
-section.header {
+.header {
     text-align: center;
+    margin-bottom: 20px;
 }
 
-h1.main-title {
-    line-height: 30px;
+.main-title {
     font-size: 24px;
+    display: flex;
+    justify-content: center;
+    gap: 8px;
 }
 
-h1.main-title::before {
+.main-title::before {
     content: url(assets/images/logo-mark.svg);
-    margin: 10px;
 }
 
-h2.event-subtitle {
+.event-subtitle {
     font-size: 40px;
-    margin: 40px 0 10px 0;
+    margin: 20px 0;
 }
 
-p.event-description {
+.event-description {
     font-size: 20px;
     color: hsl(252, 6%, 83%);
 }
 
-form {
-    display: block;
-    margin: 20px auto;
-    max-width: 30%;
+.main form {
+    max-width: 400px;
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
+    gap: 15px;
 }
 
 form label {
-    margin: 15px 0 10px;
     text-transform: capitalize;
 }
 
-form input[type="file"] {
+.drag-drop-area {
+    border: 1px dashed white;
+    border-radius: 10px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.1);
+    cursor: pointer;
+}
+
+.drag-drop-area p {
+    margin-top: 8px;
+    text-align: center;
+}
+
+.action {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin-top: 16px;
+}
+
+.btn {
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 4px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    text-decoration: underline;
+}
+
+.img-preview {
+    display: block;
+    margin: 0 auto;
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    background-color: rgba(255, 255, 255, 0.1);
+    position: relative; 
+    overflow: hidden;
+}
+
+.img-preview::before {
+    content: url(assets/images/icon-upload.svg);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: opacity 0.3s ease;
+    opacity: 1;
+}
+
+.img-preview img {
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+    object-fit: cover;
     display: none;
 }
 
-form div.drag-drop-area {
-    border-radius: 10px;
-    border: 1px dashed white;
-    cursor: pointer;
-    margin-bottom: 8px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-    background-color: rgba(255, 255, 255, 0.1);
+.img-preview.has-img::before {
+    opacity: 0;
 }
 
-form div.drag-drop-area div.file-upload {
-    content: url(assets/images/icon-upload.svg);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    background-color: rgba(255, 255, 255, 0.1);
-    padding: 4px;
-    border-radius: 8px;
-    margin-bottom: 8px;
+.img-preview.has-img img {
+    display: block;
 }
 
-form p.info {
+.info {
     font-size: 12px;
+    display: flex;
     align-items: center;
+    gap: 4px;
 }
 
-form p.info::before {
+.error {
+    color: hsl(7, 71%, 50%);
+}
+
+.info::before {
     content: url(assets/images/icon-info.svg);
-    margin-right: 4px;
-    vertical-align: middle;
 }
 
-form input[type="text"] {
+input[type="file"] {
+    display: none;
+}
+
+input[type="text"],
+input[type="email"] {
     border: 1px solid rgba(255, 255, 255, 0.75);
     border-radius: 10px;
-    min-height: 44px;
     background-color: rgba(255, 255, 255, 0.1);
     padding: 10px;
     color: white;
+    min-height: 44px;
 }
 
-form input[type="text"]::placeholder {
+input[type="text"]:focus,
+input[type="email"]:focus,
+.focus-outline {
+    outline: 2px solid rgba(255, 255, 255, 0.5);
+    outline-offset: 2px;
+}
+
+input[type="text"]:hover,
+input[type="email"]:hover,
+.drag-drop-area:hover {
+    background-color: rgba(255, 255, 255, 0.25);
+}
+
+input::placeholder {
     color: white;
-
 }
 
-form button {
-    font-family: inherit;
-    font-size: 16px;
-    color: hsl(248, 70%, 10%);
-    font-weight: 800;
-    text-transform: capitalize;
+.submit {
     background-color: hsl(7, 71%, 60%);
+    color: hsl(248, 70%, 10%);
+    font-weight: bold;
     border-radius: 10px;
     padding: 10px;
-    min-height: 44px;
-    margin-top: 20px;
-    outline: none;
+    text-transform: capitalize;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+
+.submit:hover {
+    background-color: hsl(7, 71%, 50%);
 }
