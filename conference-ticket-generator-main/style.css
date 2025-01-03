@@ -1,0 +1,193 @@
+:root {
+    --Neutral-0: hsl(0, 0%, 100%);
+    --Neutral-0-opacity1: hsl(0, 0%, 100%, 0.1);
+    --Neutral-0-opacity25: hsl(0, 0%, 100%, 0.25);
+    --Neutral-0-opacity5: hsl(0, 0%, 100%, 0.5);
+    --neutral-300: hsl(252, 6%, 83%);
+    --neutral-500: hsl(245, 15%, 58%);
+    --neutral-700: hsl(245, 19%, 35%);
+    --neutral-900: hsl(248, 70%, 10%);
+
+    --orange-500: hsl(7, 88%, 67%);
+    --orange-700: hsl(7, 71%, 60%);
+
+    --gradient-text: hsl(7, 86%, 67%) to hsl(0, 0%, 100%);
+
+    --border-radius: 8px;
+}
+
+@font-face {
+    font-family: Inconsolata;
+    src: url(assets/fonts/Inconsolata-VariableFont_wdth\,wght.ttf) format('truetype');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Inconsolata, sans-serif;
+    color: white;
+}
+
+body {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    height: 100vh;
+    margin: 0 auto;
+    padding: 16px;
+    background-image: url(assets/images/background-desktop.png);
+    background-size: cover;
+}
+
+.overlay {
+    position: absolute;
+    pointer-events: none;
+}
+
+.overlay-top {
+    content: url(assets/images/pattern-squiggly-line-top.svg);
+    top: 0;
+    right: 0;
+}
+
+.overlay-bottom {
+    content: url(assets/images/pattern-squiggly-line-bottom.svg);
+    bottom: 0;
+    left: 0;
+}
+
+.logo-container {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+}
+
+.logo-name {
+    color: var(--Neutral-0);
+    font-size: 24px;
+
+}
+
+main {
+    margin-top: 40px;
+}
+
+.introduction {
+    text-align: center;
+}
+
+.intro-heading {
+    font-size: 40px;
+    margin-bottom: 8px;
+}
+
+.form form {
+    display: flex;
+    flex-direction: column;
+    max-width: 30%;
+    margin: auto;
+}
+
+.file-upload {
+    padding: 24px 40px;
+    background-color: var(--Neutral-0-opacity1);
+    border: 1px dashed var(--Neutral-0-opacity5);
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: all 0.25s;
+}
+
+.img-preview {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 48px;
+    height: 48px;
+    margin: auto;
+    /* padding: 8px; */
+    background-color: var(--Neutral-0-opacity1);
+    border: 1px solid var(--Neutral-0-opacity5);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+}
+
+.img-preview img {
+    width: 100%;
+    height: 100%;
+}
+
+.file-upload p {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.action {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin: 8px 0 0;
+}
+
+.remove-btn,
+.change-btn {
+    padding: 4px 8px;
+    background-color: var(--Neutral-0-opacity1);
+    border: 1px solid var(--Neutral-0-opacity1);
+    border-radius: var(--border-radius);
+}
+
+.remove-btn:hover,
+.change-btn:hover {
+    text-decoration: underline;
+}
+
+label {
+    margin: 20px 0 10px;
+    font-size: 16px;
+}
+
+input[type="text"],
+input[type="email"] {
+    padding: 16px 12px;
+    font-size: 16px;
+    background-color: var(--Neutral-0-opacity1);
+    border: 1px solid var(--Neutral-0-opacity5);
+    border-radius: var(--border-radius);
+    transition: all 0.25s;
+}
+
+input[type="text"]:hover,
+input[type="email"]:hover,
+.file-upload:hover {
+    background-color: var(--Neutral-0-opacity25);
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus {
+    outline: 1px solid var(--Neutral-0);
+    outline-offset: 2px;
+}
+
+input[type="text"]::placeholder,
+input[type="email"]::placeholder {
+    color: inherit;
+}
+
+.btn {
+    margin-top: 24px;
+    padding: 12px;
+    text-align: center;
+    font-size: larger;
+    color: var(--neutral-900);
+    font-weight: 800;
+    background-color: var(--orange-700);
+    border-radius: var(--border-radius);
+}
+
+.info {
+    display: flex;
+    gap: 4px;
+    margin-top: 8px;
+    font-size: small;
+}

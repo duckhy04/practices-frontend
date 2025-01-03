@@ -1,20 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
-  
   <title>Frontend Mentor | Conference ticket generator</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
-<body>
 
+<body>
+  <div class="overlay overlay-top"></div>
+  <div class="overlay overlay-bottom"></div>
+  <header>
+    <div class="logo-container" id="logo-container">
+      <svg class="logo-svg" xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="none" viewBox="0 0 40 40">
+        <path fill="#F57463"
+          d="M0 36c6.628 0 12-5.373 12-12S6.628 12 0 12v8.4a3.6 3.6 0 1 1 0 7.2V36ZM40 16c-2.05-.65-4.234-1-6.5-1C21.626 15 12 24.626 12 36.5c0 1.192.097 2.361.283 3.5h13.36A8.6 8.6 0 0 1 40 30.869V16ZM2.11 0C3.103 9 10.734 16 20 16S36.895 9 37.89 0H25.017a5.402 5.402 0 0 1-10.035 0H2.11Z" />
+      </svg>
+      <span class="logo-name">Coding Conf</span>
+    </div>
+  </header>
+
+  <main>
+    <section class="introduction">
+      <div class="intro-container">
+        <h2 class="intro-heading">Your Journey to Coding Conf 2025 Starts Here!</h2>
+        <p class="intro-paragraph">Secure your spot at next year's biggest coding conference.</p>
+      </div>
+    </section>
+
+    <section class="form">
+      <form>
+        <label for="avatar">Upload Avatar</label>
+        <div class="file-upload">
+          <input type="file" name="avatar" id="avatar" accept="image/png, image/gif, image/jpeg" hidden>
+          <div class="img-preview">
+            <svg class="avatar-svg" xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="none" viewBox="0 0 30 30">
+              <path fill="#F57463" fill-rule="evenodd"
+                d="M21.894 11.252a.264.264 0 0 1-.229-.225c-.368-2.634-2.51-5.924-6.663-5.924-4.465 0-6.3 3.636-6.657 5.928a.264.264 0 0 1-.228.22c-2.95.362-4.945 2.622-4.945 5.729a5.802 5.802 0 0 0 3.423 5.277 6.274 6.274 0 0 0 2.305.468h2.528a.45.45 0 0 0 .45-.45c0-.267-.233-.472-.5-.484a3.077 3.077 0 0 1-2.049-.9 3.123 3.123 0 0 1 0-4.418l3.461-3.462c.147-.146.307-.277.479-.392.076-.05.158-.085.236-.129.1-.054.196-.114.301-.158.1-.04.206-.065.308-.096.092-.027.181-.062.276-.081.191-.039.384-.056.578-.059.011 0 .022-.004.034-.004.01 0 .018.003.027.004.196.002.391.02.584.059.094.019.18.053.271.08.105.031.211.055.313.098.1.042.193.098.288.15.084.046.17.083.25.137.154.103.295.221.428.349.016.014.034.024.049.039l3.463 3.463a3.124 3.124 0 0 1 0 4.42c-.558.56-1.284.86-2.05.897-.266.013-.497.219-.497.486 0 .249.202.451.451.451h2.512c.435 0 1.314-.06 2.344-.473a5.794 5.794 0 0 0 3.394-5.272c0-3.104-1.991-5.363-4.935-5.728Z"
+                clip-rule="evenodd" />
+              <path fill="#F57463" fill-rule="evenodd"
+                d="M18.464 19.62a.936.936 0 0 0 .663-1.6l-3.464-3.464a.938.938 0 0 0-.664-.275l-.014.002a.932.932 0 0 0-.65.274l-3.462 3.462a.936.936 0 1 0 1.326 1.325l1.864-1.862v6.479a.937.937 0 1 0 1.875 0v-6.48l1.864 1.863a.93.93 0 0 0 .662.275Z"
+                clip-rule="evenodd" />
+            </svg>
+          </div>
+          <p class="notes">Drag and drop of click to upload</p>
+        </div>
+        <div class="info">
+          <svg class="info-svg" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 16 16">
+            <path class="circle" stroke="#D1D0D5" stroke-linecap="round" stroke-linejoin="round"
+              d="M2 8a6 6 0 1 0 12 0A6 6 0 0 0 2 8Z" />
+            <path class="line-vertical" fill="#D1D0D5" d="M8.004 10.462V7.596ZM8 5.57v-.042Z" />
+            <path class="dot" stroke="#D1D0D5" stroke-linecap="round" stroke-linejoin="round"
+              d="M8.004 10.462V7.596M8 5.569v-.042" />
+          </svg>
+          <p class="info-text info-avatar">Upload your photo (JPG or PNG, max size: 500KB).</p>
+        </div>
+
+        <label for="full-name">Full Name</label>
+        <input type="text" name="full-name" id="full-name">
+
+        <label for="email-address">Email Address</label>
+        <input type="email" name="email-address" id="email-address" placeholder="example@email.com">
+
+        <label for="github-username">Github Username</label>
+        <input type="text" name="github-username" id="github-username" placeholder="@yourusername">
+
+        <button class="btn" type="submit">Generate My Ticket</button>
+      </form>
+    </section>
+  </main>
 </body>
+<script src="scripts.js"></script>
+
 </html>
