@@ -13,7 +13,7 @@ let actionDiv = null;
 let avatar = null;
 
 // Trigger file input when clicking the upload button
-fileUpload.addEventListener('click', () => imgInput.click());
+imgPreview.addEventListener('click', () => imgInput.click());
 imgInput.addEventListener('change', updateImgPreview);
 
 function updateImgPreview() {
@@ -67,8 +67,8 @@ function handleRemoveImage() {
         avatar = null;
     }
 
-    if (!avatarSvg) imgPreview.appendChild(avatarSvg);
-    if (!notes) fileUpload.appendChild(notes);
+    if (avatarSvg) imgPreview.appendChild(avatarSvg);
+    if (notes) fileUpload.appendChild(notes);
 
     imgInput.value = '';
 
