@@ -1,0 +1,152 @@
+:root {
+    --White: hsl(0, 0%, 100%);
+
+    --Stone-100: hsl(30, 54%, 90%);
+    --Stone-150: hsl(30, 18%, 87%);
+    --Stone-600: hsl(30, 10%, 34%);
+    --Stone-900: hsl(24, 5%, 18%);
+
+    --Brown-800: hsl(14, 45%, 36%);
+
+    --Rose-800: hsl(332, 51%, 32%);
+    --Rose-50: hsl(330, 100%, 98%);
+}
+
+@font-face {
+    font-family: Outfit;
+    src: url(assets/fonts/outfit/Outfit-VariableFont_wght.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: YoungSerif;
+    src: url(assets/fonts/young-serif/YoungSerif-Regular.ttf) format('truetype');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--Stone-100);
+}
+
+main {
+    max-width: 50%;
+    display: block;
+    margin: 160px auto;
+    padding: 40px;
+    background-color: var(--White);
+    border-radius: 24px;
+    font-family: Outfit;
+    color: var(--Stone-600);
+}
+
+h2 {
+    margin: 16px 0;
+    color: var(--Brown-800);
+}
+
+.section1 img {
+    width: 100%;
+    border-radius: 16px;
+}
+
+.section1 h1 {
+    margin: 24px 0 16px;
+    font-size: 32px;
+    font-family: YoungSerif;
+    color: var(--Stone-900)
+}
+
+.section1 p {
+    font-size: 16px;
+}
+
+.section1 article {
+    margin: 24px 0;
+    padding: 24px;
+    border-radius: 16px;
+    background-color: var(--Rose-50);
+}
+
+.section1 article h3 {
+    color: var(--Rose-800);
+}
+
+.section1 article ul {
+    margin: 4px;
+    list-style-position: inside;
+}
+
+.section1 article ul li {
+    padding: 8px;
+}
+
+.section1 article ul li::marker {
+    color: var(--Rose-800);
+}
+
+.section2 ul {
+    margin: 4px;
+    list-style-position: inside;
+}
+
+.section2 ul li {
+    padding: 8px;
+}
+
+.section2 ul li::marker {
+    color: var(--Brown-800);
+}
+
+.section3 ul {
+    list-style-position: inside;
+    list-style-type: decimal;
+    font-family: Outfit;
+}
+
+.section3 ul li {
+    padding: 8px;
+}
+
+.section3 ul li>strong {
+    margin-left: 8px;
+}
+
+.section3 ul li::marker {
+    font-weight: bold;
+    color: var(--Brown-800);
+}
+
+hr {
+    border: 1px solid var(--Stone-100);
+    margin: 24px 0;
+}
+
+table {
+    width: 100%;
+    margin-top: 16px;
+}
+
+td {
+    padding: 8px 16px;
+    border-bottom: 1px solid var(--Stone-150);
+}
+
+td>strong {
+    color: var(--Brown-800)
+}
+
+tr:last-child td {
+    border-bottom: none;
+}
+
+@media only screen and (max-width: 412px) {
+    main {
+        max-width: 100%;
+        margin: unset;
+        border-radius: unset;
+    }
+}
