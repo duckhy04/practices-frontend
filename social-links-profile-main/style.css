@@ -1,0 +1,74 @@
+:root {
+    --Green: hsl(75, 94%, 57%);
+
+    --White: hsl(0, 0%, 100%);
+
+    --Grey-700: hsl(0, 0%, 20%);
+    --Grey-800: hsl(0, 0%, 12%);
+    --Grey-900: hsl(0, 0%, 8%);
+}
+
+@font-face {
+    font-family: Inter;
+    src: url(assets/fonts/Inter-VariableFont_slnt\,wght.ttf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--Grey-900);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--White);
+    height: 100vh;
+    font-family: Inter;
+}
+
+.center {
+    width: 25%;
+    padding: 32px;
+    text-align: center;
+    background-color: var(--Grey-800);
+    border-radius: 16px;
+}
+
+img {
+    width: 30%;
+    border-radius: 100%;
+    display: block;
+    margin: 0 auto;
+}
+
+.name {
+    font-size: 24px;
+    margin-top: 24px;
+}
+
+.address {
+    color: var(--Green);
+    margin: 8px;
+    font-size: 14px;
+}
+
+.description {
+    margin: 16px;
+    font-size: 12px;
+}
+
+.link a {
+    display: block;
+    background-color: var(--Grey-700);
+    text-decoration: none;
+    color: var(--White);
+    font-size: 14px;
+    font-weight: 600;
+    padding: 12px;
+    text-align: center;
+    margin: 16px;
+    border-radius: 8px;
+}
