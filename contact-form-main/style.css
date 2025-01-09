@@ -33,13 +33,13 @@ body {
     align-items: center;
     height: 100vh;
     color: var(--Grey-900);
+    font-family: Karla;
 }
 
 main {
     width: 50%;
     padding: 32px;
     background-color: var(--White);
-    font-family: Karla;
     border-radius: 16px;
 }
 
@@ -182,5 +182,46 @@ button:hover {
 .error-message {
     margin: 8px 0 0;
     color: var(--Red);
+    font-size: 12px;
+}
+
+#snackbar {
+    visibility: hidden;
+    padding: 24px;
+    position: fixed;
+    top: 30px;
+    background-color: var(--Grey-900);
+    border-radius: 16px;
+    color: var(--White);
+    align-items: center;
+    z-index: 1;
+}
+
+#snackbar.show {
+    visibility: visible;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+@keyframes fadein {
+    from {top: 0; opacity: 0;}
+    to {top: 30; opacity: 1;}
+}
+
+@keyframes fadeout {
+    from {top: 30px; opacity: 1;}
+    to {top: 0; opacity: 0;}
+}
+
+.message-title {
+    margin-bottom: 8px;
+}
+
+.message-title::before {
+    content: url(assets/images/icon-success-check.svg);
+    vertical-align: middle;
+    margin-right: 8px;
+}
+
+.message-description {
     font-size: 12px;
 }
