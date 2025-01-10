@@ -1,0 +1,142 @@
+:root {
+    /* Primary */
+    --Red: hsl(1, 90%, 64%);
+    --Blue: hsl(219, 85%, 26%);
+
+    /* Neutral */
+    --White: hsl(0, 0%, 100%);
+    --Very-light-grayish-blue: hsl(210, 60%, 98%);
+    --Light-grayish-blue-1: hsl(211, 68%, 94%);
+    --Light-grayish-blue-2: hsl(205, 33%, 90%);
+    --Grayish-blue: hsl(219, 14%, 63%);
+    --Dark-grayish-blue: hsl(219, 12%, 42%);
+    --Very-dark-blue: hsl(224, 21%, 14%);
+}
+
+@font-face {
+    font-family: PlusJakartaSans;
+    src: url(assets/fonts/PlusJakartaSans-VariableFont_wght.ttf) format('truetype');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--Very-light-grayish-blue);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: PlusJakartaSans;
+    height: 100vh;
+}
+
+.noti-container {
+    width: 50%;
+    padding: 8px 24px;
+    border: 1px solid black;
+    border-radius: 8px;
+    background-color: var(--White);
+}
+
+.noti-header {
+    display: flex;
+    justify-content: space-between;
+    margin: 16px 0;
+}
+
+.count {
+    margin: 0 8px;
+    padding: 2px 12px;
+    background-color: var(--Blue);
+    color: var(--White);
+    border-radius: 8px;
+}
+
+.noti-mark-read {
+    color: var(--Dark-grayish-blue);
+    font-weight: 600;
+    transition: all 0.25s;
+}
+
+.noti-mark-read:hover,
+.img {
+    cursor: pointer;
+}
+
+.item-readed {
+    border-radius: inherit;
+    background-color: var(--Very-light-grayish-blue);
+}
+
+.item-readed .noti-description::after {
+    content: '●';
+    font-size: 12px;
+    color: var(--Red);
+}
+
+.noti-item {
+    display: flex;
+    gap: 16px;
+    margin: 8px 0;
+    padding: 16px;
+    font-size: 16px;
+    border-radius: 8px;
+    color: var(--Grayish-blue);
+    transition: all 0.25s;
+}
+
+.noti-item:hover {
+    background-color: var(--Very-light-grayish-blue);
+}
+
+.name,
+.post,
+.group {
+    font-weight: 800;
+    cursor: pointer;
+    transition: all 0.25s;
+}
+
+.name:hover,
+.post:hover,
+.group:hover,
+.noti-mark-read:hover {
+    color: var(--Blue);
+}
+
+.name {
+    color: var(--Very-dark-blue);
+}
+
+.item-readed .post, .item-readed .group {
+    color: var(--Blue);
+}
+
+.group, .post {
+    color: var(--Dark-grayish-blue);
+}
+
+.message {
+    margin: 8px 0;
+    padding: 16px;
+    border: 1px solid var(--Light-grayish-blue-1);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.25s;
+}
+
+.message:hover {
+    background-color: var(--Light-grayish-blue-2);
+}
+
+.img {
+    margin-left: auto;
+}
+
+img {
+    width: 48px;
+    vertical-align: middle;
+}
