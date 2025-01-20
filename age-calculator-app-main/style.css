@@ -1,0 +1,149 @@
+:root {
+    /* ### Primary */
+
+    --Purple: hsl(259, 100%, 65%);
+    --Light-red: hsl(0, 100%, 67%);
+
+    /* ### Neutral */
+
+    --White: hsl(0, 0%, 100%);
+    --Off-white: hsl(0, 0%, 94%);
+    --Light-grey: hsl(0, 0%, 86%);
+    --Smokey-grey: hsl(0, 1%, 44%);
+    --Off-black: hsl(0, 0%, 8%);
+}
+
+@font-face {
+    font-family: Poppins;
+    src: url(assets/fonts/Poppins-Regular.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: PoppinsBold;
+    src: url(assets/fonts/Poppins-Bold.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: PoppinsBoldItalic;
+    src: url(assets/fonts/Poppins-BoldItalic.ttf) format('truetype');
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Poppins;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: var(--Off-white);
+}
+
+.container {
+    padding: 32px;
+    background-color: var(--White);
+    border-radius: 40px 40px 200px;
+}
+
+form {
+    color: var(--Smokey-grey);
+    text-transform: uppercase;
+    font-weight: 800;
+}
+
+input[type='number'] {
+    width: 120px;
+    padding: 8px 16px;
+    color: var(--Off-black);
+    outline: none;
+    border-radius: 4px;
+    border: 1px solid var(--Light-grey);
+    caret-color: var(--Purple);
+    transition: all 0.5s;
+}
+
+input[type=number]::placeholder {
+    color: var(--Smokey-grey);
+    font-weight: 800;
+}
+
+input[type=number],
+input[type=number]::placeholder {
+    font-size: 24px;
+    font-family: PoppinsBold;
+}
+
+input[type=number]:focus {
+    border: 1px solid var(--Purple);
+}
+
+input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+label {
+    display: block;
+    font-size: 12px;
+}
+
+form .day,
+form .month,
+form .year {
+    display: inline-block;
+    margin-right: 16px;
+}
+
+.btn {
+    display: flex;
+    width: 500px;
+    align-items: center;
+    cursor: pointer;
+}
+
+.line {
+    width: 100%;
+    height: 1px;
+    border: 1px solid var(--Off-white);
+}
+
+.img {
+    right: 0;
+    width: 64px;
+    padding: 16px;
+    background-color: var(--Purple);
+    border-radius: 100%;
+    transition: 0.25s all;
+}
+
+.img:hover {
+    background-color: var(--Off-black);
+}
+
+.img img {
+    display: block;
+    margin: auto;
+}
+
+.display {
+    font-size: 48px;
+    font-style: italic;
+    color: var(--Off-black);
+}
+
+.years,
+.days,
+.months,
+span {
+    font-family: PoppinsBoldItalic;
+}
+
+span {
+    color: var(--Purple);
+    font-weight: bolder;
+    letter-spacing: 2px;
+}
